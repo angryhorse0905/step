@@ -148,17 +148,6 @@
                                     </a>
                                 </div>
                                 <div class="btn-group pull-right">
-                                    <%
-                                        if(!appManager.isLocal()) {
-                                    %>
-                                    <div class="dropdown btn-group">
-                                        <button class="btn btn-default btn-sm dropdown-share" data-toggle="dropdown" type="button" title="<fmt:message key="share" />">
-                                            <span class="glyphicon glyphicon-thumbs-up"></span>
-                                        </button>
-                                    </div>
-                                    <%
-                                        }
-                                    %>
                                     <div class="dropdown btn-group settingsDropdown">
                                         <button class="btn btn-default btn-sm dropdown-toggle showSettings" title="<fmt:message key="view" />" type="button" data-toggle="dropdown">
                                             <span class="glyphicon glyphicon-cog"></span>

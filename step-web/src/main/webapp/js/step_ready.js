@@ -209,7 +209,7 @@
 //        } else {
 //            registerColumnChangeEvents();
         }
-        
+
         //do cookie notification
         step.util.raiseOneTimeOnly("cookie_notification", 'info');
         if(step.state.getIncompleteLanguage()) {
