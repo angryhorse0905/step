@@ -23,9 +23,9 @@ $disabledColour: darkgrey;
 $linkColour: #26539e;
 
 // scrollbar colours
-$tyndaleBurgundy: #822433;
+$tyndaleBurgundy: #0663c7;
 $activeColor: $tyndaleBurgundy;
-$headerBackgroundColor: black;
+$headerBackgroundColor: #00348e;
 $scrollColor: $tyndaleBurgundy;
 $scrollTrack: lighten($scrollColor, 0.05);
 $scrollTrackHover: lighten($scrollColor, 0.20);
@@ -36,7 +36,7 @@ $scrollTrackThumbShadow: lighten($scrollColor, 0.07);
 
 // colours in dropdown
 $activeTabColour: $tyndaleBurgundy;
-$headingColour: #111;
+$headingColour: #00348e;
 $quickLexiconColour: $tyndaleBurgundy;
 $quickLexiconFontColour: white;
 $quickLexiconRelatedFontColour: black;
@@ -48,17 +48,17 @@ $hoverColorText: white;
 $verseNumberBackground: #eee;
 $inactiveTabColor: black;
 
-$bibleRow: #631427;
+$bibleRow: #0663c7;
 $subjectRow: #361463;
 $meaningsRow: #635314;
 $greekRow: #0A352B;
-$greekMeaningsRow: #146350;
+$greekMeaningsRow: #7db0ff;
 $hebrewRow: #0B1135;
 $hebrewMeaningsRow: #142263;
 $exactForm: #3F3207;
 $textRow: #200A35;
 $topicByRefRow: #4C1D8E;
-$referenceRow: #340B15;
+$referenceRow: #0663c7;
 $optionStartGradient: 0%;
 $optionEndGradient: 20%;
 
