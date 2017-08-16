@@ -111,11 +111,6 @@
                     <div class="navbar-brand col-xs-12">
                         <span class="hidden-xs title">
                             <a href="/"><img id="logo" src="images/step-top-left-logo.png" width="54" height="50" /></a>
-                            <a href="/">STEP</a>
-                            <br />
-                            <span class="subtitle">
-                                <a href="http://www.tyndale.cam.ac.uk" target="_blank">Tyndale House</a>
-                            </span>
                         </span>
                         <span class="help"><jsp:include page="js/menu/top/menu.jsp" /></span>
                         <form role="form">
