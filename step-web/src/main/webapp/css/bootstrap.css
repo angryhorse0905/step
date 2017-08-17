@@ -2277,11 +2277,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  background-color: #213fa9;
+  border-color: #001b7a;
 }
 .btn-danger .badge {
-  color: #d9534f;
+  color: #213fa9;
   background-color: #fff;
 }
 .btn-link {
