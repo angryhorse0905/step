@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <HTML>
 <HEAD>
-    <TITLE><%= request.getParameter("title") %></TITLE>
+    <TITLE>E4.org</TITLE>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<meta name="description" content="<%= request.getParameter("description") %>" />
@@ -15,5 +15,5 @@
 <body>
 
 <div class="header">
-	<h1><a href="./">STEP :: Scripture Tools for Every Person</a></h1>
+	<h1><a href="./"></a></h1>
 </div>

@@ -34,7 +34,7 @@
 <% if(infos.getVocabInfos().size() > 0)  {
     VocabInfo firstVocab = infos.getVocabInfos().get(0);
 %>
-    <TITLE><%= firstVocab.getAccentedUnicode() %> | <%= firstVocab.getStepTransliteration() %> | <%= firstVocab.getStepGloss() %> | <%= firstVocab.getStrongNumber() %> | STEP</TITLE>
+    <TITLE>E4.org</TITLE>
     <meta name="description" content="<%= firstVocab.getShortDef() %>" />
 <%
     }

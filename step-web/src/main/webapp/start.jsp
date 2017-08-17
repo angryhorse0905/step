@@ -33,7 +33,7 @@
         }
     %>
 
-    <TITLE>${ title }</TITLE>
+    <TITLE>E4.org</TITLE>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta step-local content="<%= appManager.isLocal() %>" />
