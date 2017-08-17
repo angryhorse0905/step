@@ -130,7 +130,7 @@
 
         <div class="mainPanel row row-offcanvas">
             <div class="" id='columnHolder'>
-                <div class="col-sm-6 col-xs-12 column">
+                <div class="col-sm-12 col-xs-12 column">
                     <div class="passageContainer active" passage-id=0>
                         <span class="activeMarker"></span>
                         <div class="passageText ui-widget">
@@ -275,33 +275,6 @@
                                 <search:copyrightinfo />
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="hidden-xs col-sm-6 column examplesColumn" dir="${ ltr ? "ltr" : "rtl" }">
-                    <div class="passageContainer examplesContainer">
-                        <button class="btn btn-default btn-sm closeColumn" title="<fmt:message key="close" />" type="button" >
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                        
-                        <h1><fmt:message key="simple_intro_welcome" /></h1>
-                        <h1><fmt:message key="simple_intro_tyndale_house_project" /></h1>
-                        <br />
-                        
-                        <fmt:message key="simple_intro" />
-                        <br /><br />
-
-                        <fmt:bundle basename="InteractiveBundle">
-                            <fmt:message key="the_pentateuch" var="pentateuch" />
-                        </fmt:bundle>
-                        <search:sample_search explanation="simple_passage_explanation" option1="ESV" option1type="version" option2="Gen 1" option2type="reference" sampleURL="/?q=version=ESV|reference=Gen.1&options=VHNUG" />
-                        <search:sample_search explanation="multiple_versions_explanation" option1="NIV" option1type="version" option2="ESV" option2type="version" option3="KJV" option3type="version" option4="Gen 1" option4type="reference" sampleURL="/?q=version=NIV|version=ESV|version=KJV|reference=Gen.1&options=HVGUN&display=COLUMN" />
-                        <search:sample_search explanation="simple_search_explanation" option1="ESV" option1type="version" option2="brother" option2type="greekMeanings" sampleURL="/?q=version=ESV|strong=G0080&options=HVNGU" />
-                        <%--<search:sample_search explanation="simple_search_restricted_explanation" option1="${ pentateuch }" option1type="reference" option2="ESV" option2type="version" option3="he.sed" option3type="hebrew" sampleURL="" />--%>
-                        <search:sample_search explanation="chained_searches_explanation" option1="NIV" option1type="version" option2="ESV" option2type="version" option3="land" option3type="text" option4="he.sed" option4type="hebrewMeanings" sampleURL="/?q=version=NIV|version=ESV|text=land|strong=H2617a&options=VGUVNH&display=INTERLEAVED" />
-                        <search:sample_search explanation="chained_searches_explanation_subject" option1="ESV" option1type="version" option2="throne" option2type="meanings" option3="David" option3type="subject" option4="Isa-Rev" option4type="reference" sampleURL="/?q=version=ESV|meanings=throne|subject=david|reference=Isa-Rev&options=HNVUG" />
-                        <search:sample_search explanation="interlinear_versions_explanation" option1="KJV" option1type="version" option2="WHNU" option2type="version" option3="John 1" option3type="reference" sampleURL="/?q=version=KJV|version=WHNU|reference=John.1&options=HVLUNM&display=INTERLINEAR" showInterlinear="true" />
-
-                        <div class="text-muted step-copyright"><span>&copy; <a href="http://www.tyndale.cam.ac.uk" target="_blank">Tyndale House, Cambridge, UK</a> - <%= Calendar.getInstance().get(Calendar.YEAR) %><span></span></div>
                     </div>
                 </div>
             </div>
