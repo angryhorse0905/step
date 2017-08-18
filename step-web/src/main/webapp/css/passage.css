@@ -382,7 +382,7 @@ H4.heading  {
 
 H2.xgen {
 	font-family: Verdana;
-	color: #0664c8;
+	color: #000441;
 }
 
 H2.xgen ul {
@@ -447,13 +447,13 @@ h3.psalmHeading .note {
 
 
 a.linkRef {
-	color: #26539e;
+	color: #001f72;
 	font-weight: normal;
 	front-size: smaller;
 }
 
 a:hover.linkRef {
-	color: #33339F;	
+	color: #001a6f;
 	font-weight: normal;
 	front-size: smaller;
 }
