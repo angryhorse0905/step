@@ -166,7 +166,7 @@
             step.passages.add(new PassageModel({ passageId: 0 }));
         }
 
-        $("#stepDisclaimer").popover();
+        // $("#stepDisclaimer").popover();
     }
 
     //can this be done before load? self executing function
