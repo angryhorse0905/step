@@ -39,7 +39,7 @@ public class STEPTomcatServer {
     public static final String STEP_TITLE = "STEP :: Scripture Tools for Every Person";
     public static final int MAX_WAIT_TO_TEST_PORT_IN_USE_MS = 150;
     private static final Logger LOGGER = LoggerFactory.getLogger(STEPTomcatServer.class);
-    private static final int DEFAULT_STEP_PORT = 8989;
+    private static final int DEFAULT_STEP_PORT = 8080;
     private static final String DEFAULT_WAR_LOCATION = "step-web";
     private static final String DEFAULT_WAR_CONTEXT = "";
     private final InetSocketAddress socket;
