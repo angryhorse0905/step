@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * Downloads the home page and amends it to suit the purposes of the mobile app
  */
 public class RipHomePage {
-    public static final String BASE_STEP = "http://localhost:8080/";
+    public static final String BASE_STEP = "http://localhost:80/";
     public static final Pattern CSS_URL = Pattern.compile("url\\('?([^')]+)'?\\)");
     public static final Pattern JS_URL = Pattern.compile("\"(js/.*min\")");
 
