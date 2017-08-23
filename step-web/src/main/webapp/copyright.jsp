@@ -31,6 +31,10 @@
     <script src="js/step.util.js" type="text/javascript"></script>
 
     <style type="text/css">
+        .pageContent {
+            margin: 20px;
+        }
+
         .navTree{
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
@@ -4719,54 +4723,8 @@
 
 
 
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=57">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_sproul.png" alt="R. C. Sproul Library" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=57" class="prodtitle">
-                                R. C. Sproul Library </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Essential Truths, Holiness of God, Now that’s a Good Question, Chosen by God, Glory of Christ, Mystery of the Holy Spirit, Pleasing God, Surprised by Suffering </td> -->
-
-                                Dr. Sproul is known not only for his <b>deep theology,</b> but also for his knack for presenting the <b>deep truths</b> of the Scriptures <b>in a way that any layperson can understand.</b> <br><br>He is Host of '<i>Renewing Your Mind</i>' Radio Program and has served as a professor at Reform...<a href="https://www.freebiblesoftware.com/products/library.asp?library=57"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=57">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=57">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
+                </td></tr>
+            <tr>
                 <td width="45%" valign="top">
 
                     <table width="500">
@@ -5006,148 +4964,8 @@ Street Pulpit        " hspace="3" valign="top" align="left">
 
 
 
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=69">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_cf_v3.png" alt="Christian Focus Commentaries Volume 3" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=69" class="prodtitle">
-                                Christian Focus Commentaries Volume 3 </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 1 & 2 Thessalonians - Mayhue, 1 & 2 Timothy & Titus - Milne, Hebrews - Riggans, James - Derek Prime, 1st Peter - Cleave, 2nd Peter & Jude - Gardner, 1st, 2nd & 3rd John - Eaton, Revelation - Gardner </td> -->
-
-                                You may find it difficult to find a commentary series with balance.  Some commentaries are focused on studying the original language or higher criticisms which may be difficult to apply to your life.  Other commentaries are very easy to apply to your life, but they lack depth.  The Christian Focus C...<a href="https://www.freebiblesoftware.com/products/library.asp?library=69"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=69">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=69">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=68">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_cf_v2.png" alt="Christian Focus Commentaries Volume 2" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=68" class="prodtitle">
-                                Christian Focus Commentaries Volume 2 </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Daniel - Fyall, Hosea - Eaton, Jonah, Micah, Nahum,Habakkuk & Zephaniah - Mackay, Haggai, Zechariah & Malachi - Mackay, Mark - Grogan, Mathew - Price, 1st Corinthians - Barnett, 2nd Corinthians - Grogan </td> -->
-
-                                You may find it difficult to find a commentary series with balance.  Some commentaries are focused on studying the original language or higher criticisms which may be difficult to apply to your life.  Other commentaries are very easy to apply to your life, but they lack depth.  The Christian Focus C...<a href="https://www.freebiblesoftware.com/products/library.asp?library=68"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=68">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=68">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=67">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_cf_v1.png" alt="Christian Focus Commentaries Volume 1" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=67" class="prodtitle">
-                                Christian Focus Commentaries Volume 1 </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Deuteronomy - A. Harman, Joshua - R. Davis, Judges & Ruth - S. Dray, Judges - R. Davis, 1 Samuel - R. Davis, 2 Samuel - R. Davis, Job - B. Cotton, Proverbs - E. Lane, Song of Songs - Brooks </td> -->
-
-                                "D. Ralph Davis'<strong> </strong>commentaries (Judges, Joshua, I Sam., II Sam.)<strong>are <u></u>ALL consistently amazing.&nbsp; </strong>In fact, <strong>if I had just one commentary </strong>on each of those books<strong> I'd take Davis... </strong>I have two copies of each of Davis&amp;...<a href="https://www.freebiblesoftware.com/products/library.asp?library=67"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=67">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=67">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
+                </td></tr>
+<tr>
                 <td width="45%" valign="top">
 
                     <table width="500">
@@ -5188,53 +5006,6 @@ Street Pulpit        " hspace="3" valign="top" align="left">
 
 
                                 </strong></td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=58">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_packer.png" alt="J. I. Packer Library" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=58" class="prodtitle">
-                                J. I. Packer Library </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Life in the Spirit, God's Plan for You, Growing in Christ, A Passion for Faithfulness, A Quest for Godliness, Concise Theology </td> -->
-
-                                Packer, author of Knowing God (available on BSL Vol 3), is known as one of the most significant writers of this century.  In this library you will see why, as Packer leads in an exploration of the lives and teachings of great Puritans such as Owen, Baxter and Edwards, of leadership in Nehemiah, of t...<a href="https://www.freebiblesoftware.com/products/library.asp?library=58"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=58">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=58">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
                         </tr>
                         </tbody></table><hr size="0.5 px" color="#736F6E">
 
@@ -5437,103 +5208,6 @@ Street Pulpit        " hspace="3" valign="top" align="left">
 
 
                                     <a href="/cart/viewcartmodify.asp?library=63">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=56">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_lj_preachvol1.png" alt="Martyn Lloyd-Jones Preaching Library Vol 1" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=56" class="prodtitle">
-                                Martyn Lloyd-Jones Preaching Library Vol 1 </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Walking with God, Authentic Christianity, Children of God, Courageous Christianity, Fellowship with God, Life in God, Love of God </td> -->
-
-                                Lloyd-Jones has been called <strong>"the best preacher of this century"</strong> with good reason: he gives a <strong>deep exposition</strong> of the text in such a way that challenges the mind and <strong>sets the heart of fire</strong>.  It feels like someone has laid out a feast for your soul. Bo...<a href="https://www.freebiblesoftware.com/products/library.asp?library=56"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=56">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=56">
-                                        <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
-
-
-                            </td>
-                        </tr>
-                        </tbody></table><hr size="0.5 px" color="#736F6E">
-
-
-
-                </td></tr><tr>
-                <td width="45%" valign="top">
-
-                    <table width="500">
-
-
-                        <tbody><tr>
-                            <td width="10%" valign="top">
-
-
-
-                                <a href="https://www.freebiblesoftware.com/products/library.asp?library=31">
-                                    <img border="0" src="https://www.freebiblesoftware.com/pictures/bsml_mentor.png" alt="Mentor Scholarly Commentaries" hspace="3" valign="top" align="left">
-                                </a>
-
-
-                            </td>
-                            <td width="100%" valign="top" class="proddescr"><a href="https://www.freebiblesoftware.com/products/library.asp?library=31" class="prodtitle">
-                                Mentor Scholarly Commentaries </a> <br>
-
-
-
-                                <!-- <b>Titles:</b>
-                                 Amos - Smith, 1 & 2 Chronicles - Pratt, Exodus - J. Mackay, Psalms - Harman </td> -->
-
-                                <strong>Scholarly</strong> and <strong>In-depth</strong> Commentaries that will
-                                give you <strong>solid answers </strong>as you study these books of the Bible.&nbsp;
-                                These books are <strong>not for the casual</strong> study of scripture.&nbsp;
-                                They really dig-in to the text and meaning of Scrip...<a href="https://www.freebiblesoftware.com/products/library.asp?library=31"><b>More</b></a>                        <br>
-
-
-
-                                    <p class="redstars">
-                                    <a href="https://www.freebiblesoftware.com/products/library.asp?library=31">
-                                        <img src="https://www.freebiblesoftware.com/img/learnmore.jpg" width="128" height="17" border="0"></a>
-
-
-
-
-
-                                    <a href="/cart/viewcartmodify.asp?library=31">
                                         <img src="../img/addtocart.jpg" width="128" height="13" border="0"></a></p>
 
 
