@@ -26,4 +26,9 @@
         <%--<span class="glyphicon glyphicon-book"></span></button>--%>
     <button  class="btn btn-default btn-sm showStats" type="button" title="<fmt:message key="passage_open_sidebar" />">
         <span class="glyphicon glyphicon-save"></span></button>
+    <div class="navbar-collapse collapse">
+        <span>
+            <a href="/versions.jsp"><span class="caret mini-level"></span>Copyright</a>
+        </span>
+    </div>
 </div>

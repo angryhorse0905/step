@@ -45,10 +45,6 @@
         %>
 
 
-        <span id="bookListContainer">
-            <%= stepRequest.getBookList() %>
-        </span>
-
         <span class="copyright" style="margin: 0px !important;">
             <span class="about"><fmt:message key="module_from_sword"/></span>
             <p></p>
