@@ -27,8 +27,6 @@
     <button  class="btn btn-default btn-sm showStats" type="button" title="<fmt:message key="passage_open_sidebar" />">
         <span class="glyphicon glyphicon-save"></span></button>
     <div class="navbar-collapse collapse">
-        <span>
-            <a href="/comingsoon.jsp"><span class="caret mini-level"></span>Coming Soon</a>
-        </span>
+        <button class="btn btn-default"><a style="color: #000;" href="/comingsoon.jsp">Coming Soon</a></button>
     </div>
 </div>
