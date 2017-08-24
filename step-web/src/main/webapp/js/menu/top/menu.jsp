@@ -28,7 +28,7 @@
         <span class="glyphicon glyphicon-save"></span></button>
     <div class="navbar-collapse collapse">
         <span>
-            <a href="/versions.jsp"><span class="caret mini-level"></span>Copyright</a>
+            <a href="/comingsoon.jsp"><span class="caret mini-level"></span>Coming Soon</a>
         </span>
     </div>
 </div>
