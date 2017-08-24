@@ -17,7 +17,7 @@
 <HTML>
 <HEAD>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <TITLE>STEP :: Scripture Tools for Every Person</TITLE>
+    <TITLE>E4.org</TITLE>
 
     <%@include file="jsps/offlinePage.jsp" %>
     <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
@@ -35,9 +35,11 @@
 </HEAD>
 <body>
     <div>
-        <div class="header">
-            <h1>STEP :: Scripture Tools for Every Person</h1>
-        </div>
+        <a href="/">
+            <div class="header">
+                <h1></h1>
+            </div>
+        </a>
         <div class="pageContent">
             <h2><fmt:message key="welcome_to_step_configuration"/></h2>
 
