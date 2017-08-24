@@ -14,6 +14,8 @@
 </HEAD>
 <body>
 
-<div class="header">
-	<h1><a href="./"></a></h1>
-</div>
+<a href="/">
+	<div class="header">
+		<h1></h1>
+	</div>
+</a>
