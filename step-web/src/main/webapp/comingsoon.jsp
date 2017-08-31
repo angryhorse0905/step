@@ -162,6 +162,9 @@
             margin-bottom: 0;
             list-style-position: outside;
         }
+        .header {
+            border:0px;
+        }
     </style>
 
 </HEAD>
@@ -174,7 +177,7 @@
     </a>
     <div class="pageContent">
         <iframe
-                style="border:0; position:fixed; top:40px; left:0; right:0; bottom:0; width:100%; height:100%"
+                style="border:0; position:fixed; top:50px; left:0; right:0; bottom:0; width:100%; height:100%"
                 src="http://www.freebiblesoftware.com/products/comingsoon.asp?newLibraries=2222&IDNode=1">
 
         </iframe>
