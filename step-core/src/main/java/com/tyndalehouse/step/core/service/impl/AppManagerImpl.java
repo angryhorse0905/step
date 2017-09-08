@@ -67,7 +67,7 @@ public class AppManagerImpl implements AppManagerService {
 
     @Override
     public String getAppDomain() {
-        return Boolean.TRUE.equals(Boolean.getBoolean("step.development")) ? "dev.stepbible.org" : "www.stepbible.org";
+        return Boolean.TRUE.equals(Boolean.getBoolean("step.development")) ? "e4.org" : "e4.org";
     }
 
     @Override

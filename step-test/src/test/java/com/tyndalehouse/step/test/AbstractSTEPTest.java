@@ -196,7 +196,7 @@ public abstract class AbstractSTEPTest implements SauceOnDemandSessionIdProvider
     }
 
     public String getDefaultURL() {
-        return System.getProperty("url") == null ? "http://dev.stepbible.org" : System.getProperty("url");
+        return System.getProperty("url") == null ? "http://e4.org" : System.getProperty("url");
     }
 
     public void openHomePage() {
