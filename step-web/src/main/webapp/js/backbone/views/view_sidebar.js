@@ -57,8 +57,9 @@ var SidebarView = Backbone.View.extend({
         //show the correct tab
         this.$el.find("[data-target='#" + this.model.get("mode") + "']").tab("show");
 
-        if (this.model.get("mode") == 'lexicon') {
-            this.lexicon.addClass("active");
+        if (this.model.get("mode") == 'xreference') {
+            self.createXReference();
+        } else if (this.model.get("mode") == 'lexicon') {
             //load content
             var requestTime = new Date().getTime();
             $.getSafe(MODULE_GET_INFO, [this.model.get("version"), this.model.get("ref"), this.model.get("strong"), this.model.get("morph")], function (data) {
@@ -77,9 +78,11 @@ var SidebarView = Backbone.View.extend({
     _createBaseTabs: function () {
         var tabContent = $("<div class='tab-content'></div>");
 
+        this.xreference = $("<div id='xreference' class='tab-pane'></div>");
         this.lexicon = $("<div id='lexicon' class='tab-pane'></div>");
         this.analysis = $("<div id='analysis' class='tab-pane'></div>");
         this.history = $("<div id='history' class='tab-pane'></div>");
+        tabContent.append(this.xreference);
         tabContent.append(this.lexicon);
         tabContent.append(this.analysis);
         tabContent.append(this.history);
@@ -94,6 +97,9 @@ var SidebarView = Backbone.View.extend({
         } else {
             this.historyView.refresh();
         }
+    },
+    createXReference: function () {
+
     },
     createAnalysis: function () {
         if (!this.analysisView) {
@@ -293,7 +299,8 @@ var SidebarView = Backbone.View.extend({
     },
     _createTabHeadersContainer: function () {
         var template = '<ul class="nav nav-tabs">' +
-            '<li class="active"><a href="javascript:void(0)" class="glyphicon glyphicon-info-sign" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"></li>' +
+            '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference">R</a></li>' +
+            '<li><a href="javascript:void(0)" class="glyphicon glyphicon-info-sign" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-stats" title="<%= __s.passage_stats %>" data-toggle="tab" data-target="#analysis"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-bookmark" title="<%= __s.bookmarks_and_recent_texts %>" data-toggle="tab" data-target="#history"></li>' +
             '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help">?</li>' +

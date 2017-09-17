@@ -134,9 +134,9 @@
         <xsl:choose>
           <xsl:when test="$Notes = 'true' and //note[not(@type = 'x-strongsMarkup')]">
             <xsl:choose>
-              <xsl:when test="$direction != 'rtl'">
-                <div class="notesPane">
-                      <xsl:apply-templates select="//verse" mode="print-notes"/>
+                  <xsl:when test="$direction != 'rtl'">
+                      <div class="notesPane">
+                          <xsl:apply-templates select="//verse" mode="print-notes"/>
                 </div>
               </xsl:when>
               <xsl:otherwise>

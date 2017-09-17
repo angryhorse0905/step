@@ -47,10 +47,10 @@ var PassageDisplayView = DisplayView.extend({
                 this.doFonts(passageHtml, options, interlinearMode, languages);
                 this.doSwapInterlinearLink(passageHtml);
                 this._doInlineNotes(passageHtml, passageId);
-                this._doSideNotes(passageHtml, passageId, version);
-                this._doNonInlineNotes(passageHtml);
+                // this._doSideNotes(passageHtml, passageId, version);
+                // this._doNonInlineNotes(passageHtml);
                 this._doVerseNumbers(passageId, passageHtml, options, interlinearMode, version);
-                this._doHideEmptyNotesPane(passageHtml);
+                // this._doHideEmptyNotesPane(passageHtml);
                 this._adjustTextAlignment(passageHtml);
                 step.util.restoreFontSize(this.model, passageHtml);
                 this._addStrongHandlers(passageId, passageHtml);
@@ -467,14 +467,14 @@ var PassageDisplayView = DisplayView.extend({
 
             if (options == undefined || (options.indexOf("V") == -1 && !hasVerseNumbersByDefault)) {
                 //nothing to do:
-                return;
-            }
+            return;
+        }
 
-            step.util.ui.enhanceVerseNumbers(passageId, passageContent, version);
-        },
+    step.util.ui.enhanceVerseNumbers(passageId, passageContent, version);
+},
 
-        _doHideEmptyNotesPane: function (passageContent) {
-            var notes = $(".notesPane", passageContent);
+_doHideEmptyNotesPane: function (passageContent) {
+    var notes = $(".notesPane", passageContent);
 
             if (notes.text().trim().length == 0) {
                 notes.toggle(false);

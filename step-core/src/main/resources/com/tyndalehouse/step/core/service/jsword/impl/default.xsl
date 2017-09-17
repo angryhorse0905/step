@@ -137,20 +137,6 @@
             <!-- There is a rendering bug which prevents the notes from adhering to the right edge. -->
             <xsl:choose>
                 <xsl:when test="$Notes = 'true' and //note[not(@type = 'x-strongsMarkup')]">
-                    <xsl:choose>
-                        <xsl:when test="$direction != 'rtl'">
-                            <div class="notesPane">
-                                <xsl:apply-templates select="//verse|//title" mode="print-cross-references"/>
-                            </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <div class="notesPane">
-                                <!-- In a right to left, the alignment should be reversed too -->
-                                <p>&#160;</p>
-                                <xsl:apply-templates select="//note" mode="print-cross-references"/>
-                            </div>
-                        </xsl:otherwise>
-                    </xsl:choose>
                 </xsl:when>
             </xsl:choose>
             <xsl:apply-templates/>
