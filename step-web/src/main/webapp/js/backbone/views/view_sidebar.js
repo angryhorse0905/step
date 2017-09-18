@@ -20,6 +20,7 @@ var SidebarView = Backbone.View.extend({
         this.listenTo(this.model, "forceOpen", this.openSidebar);
 
         this.createXReference();
+        this.createHelp();
         this.activate();
         this.$el.find('a[data-toggle="tab"]').on("shown.bs.tab", this._notifyTabPanes);
     },
@@ -49,6 +50,11 @@ var SidebarView = Backbone.View.extend({
         var examplesContainer = $(".examplesContainer");
         examplesContainer.attr("id", "help").addClass("tab-pane");
         $(".tab-content").append(examplesContainer);
+
+        if ($("#help").html().length == 0) {
+            $("#help").html("<div style='padding:4px;'><h6>Help Guide coming soon</h6></div>");
+        }
+
     },
     activate: function () {
         var self = this;
@@ -72,6 +78,10 @@ var SidebarView = Backbone.View.extend({
             self.createAnalysis();
         } else if (this.model.get("mode") == 'history') {
             self.createHistory();
+        } else if (this.model.get("mode") == 'help') {
+            self.createHelp();
+        } else if (this.model.get("mode") == 'copy') {
+            self.createCopy();
         } else {
             self.createHelp();
         }
@@ -83,10 +93,14 @@ var SidebarView = Backbone.View.extend({
         this.lexicon = $("<div id='lexicon' class='tab-pane'></div>");
         this.analysis = $("<div id='analysis' class='tab-pane'></div>");
         this.history = $("<div id='history' class='tab-pane'></div>");
+        this.help = $("<div id='help' class='tab-pane'></div>");
+        this.copy = $("<div id='copy' class='tab-pane'></div>");
         tabContent.append(this.xreference);
         tabContent.append(this.lexicon);
         tabContent.append(this.analysis);
         tabContent.append(this.history);
+        tabContent.append(this.help);
+        tabContent.append(this.copy);
         this.$el.append(tabContent);
         return tabContent;
     },
@@ -102,6 +116,11 @@ var SidebarView = Backbone.View.extend({
     createXReference: function () {
         if ($("#xreference").html().length == 0) {
             $("#xreference").html("<div class=''>" + $('.notesPane').html() + "</div>");
+        }
+    },
+    createCopy: function () {
+        if ($("#copy").html().length == 0) {
+            $("#copy").html("<div style='padding:4px;'><h6>Copy feature coming soon</h6></div>");
         }
     },
     createAnalysis: function () {
@@ -303,10 +322,11 @@ var SidebarView = Backbone.View.extend({
     _createTabHeadersContainer: function () {
         var template = '<ul class="nav nav-tabs">' +
             '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference">R</a></li>' +
-            '<li><a href="javascript:void(0)" class="glyphicon glyphicon-info-sign" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"></li>' +
+            '<li><a href="javascript:void(0)" class="" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon">א</a></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-stats" title="<%= __s.passage_stats %>" data-toggle="tab" data-target="#analysis"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-bookmark" title="<%= __s.bookmarks_and_recent_texts %>" data-toggle="tab" data-target="#history"></li>' +
             '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help">?</li>' +
+            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#copy">C</li>' +
             '</ul>';
 
         var tabContainer = $(_.template(template)());
