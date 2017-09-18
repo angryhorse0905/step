@@ -21,6 +21,7 @@ var SidebarView = Backbone.View.extend({
 
         this.createXReference();
         this.createHelp();
+        this.createCopy();
         this.activate();
         this.$el.find('a[data-toggle="tab"]').on("shown.bs.tab", this._notifyTabPanes);
     },
