@@ -19,6 +19,7 @@ var SidebarView = Backbone.View.extend({
         this.listenTo(this.model, "toggleOpen", this.toggleOpen);
         this.listenTo(this.model, "forceOpen", this.openSidebar);
 
+        this.createXReference();
         this.activate();
         this.$el.find('a[data-toggle="tab"]').on("shown.bs.tab", this._notifyTabPanes);
     },
@@ -99,7 +100,9 @@ var SidebarView = Backbone.View.extend({
         }
     },
     createXReference: function () {
-
+        if ($("#xreference").html().length == 0) {
+            $("#xreference").html("<div class=''>" + $('.notesPane').html() + "</div>");
+        }
     },
     createAnalysis: function () {
         if (!this.analysisView) {

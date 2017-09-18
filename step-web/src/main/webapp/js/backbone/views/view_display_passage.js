@@ -47,7 +47,7 @@ var PassageDisplayView = DisplayView.extend({
                 this.doFonts(passageHtml, options, interlinearMode, languages);
                 this.doSwapInterlinearLink(passageHtml);
                 this._doInlineNotes(passageHtml, passageId);
-                // this._doSideNotes(passageHtml, passageId, version);
+                 this._doSideNotes(passageHtml, passageId, version);
                 // this._doNonInlineNotes(passageHtml);
                 this._doVerseNumbers(passageId, passageHtml, options, interlinearMode, version);
                 // this._doHideEmptyNotesPane(passageHtml);
@@ -67,6 +67,8 @@ var PassageDisplayView = DisplayView.extend({
                 this._doChromeHack(passageHtml, interlinearMode, options);
                 this.doInterlinearVerseNumbers(passageHtml, interlinearMode, options);
                 this.scrollToTargetLocation(passageContainer);
+
+                $("#xreference").html("<div class=''>" + $('.notesPane').html() + "</div>");
 
                 //give focus:
                 $(".passageContentHolder", step.util.getPassageContainer(step.util.activePassageId())).focus();
