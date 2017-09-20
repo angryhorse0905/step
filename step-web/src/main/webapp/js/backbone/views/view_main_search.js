@@ -245,6 +245,7 @@ var MainSearchView = Backbone.View.extend({
             self.masterSearch.html(self.masterSearch.val());
         });
 
+        this.showAnalysis();
     },
     _setData: function (values) {
         this.masterSearch.select2("data", values, true);
