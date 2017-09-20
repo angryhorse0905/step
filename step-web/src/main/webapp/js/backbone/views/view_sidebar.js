@@ -116,9 +116,59 @@ var SidebarView = Backbone.View.extend({
     },
     createXReference: function () {
         if ($("#xreference").html().length == 0) {
-            $("#xreference").html("<div class=''>" + $('.notesPane').html() + "</div>");
+            $("#xreference").html("<div class='rightNotesPane'>" + $('.notesPane').html() + "</div>");
+
+            Backbone.Events.trigger("updateXREF");
+
         }
     },
+
+    /**
+     * Looks at non-inline notes and renders those!
+     * @param passageContent
+     * @private
+     */
+    _doNonInlineNotes: function (passageContent) {
+        var verseNotes = $(".verse .note, h3 .note, h2 .note", passageContent);
+        var nonInlineNotes = verseNotes.not(verseNotes.has(".inlineNote"));
+
+        for (var i = 0; i < nonInlineNotes.length; i++) {
+            var link = this._doHighlightNoteInPane(passageContent, $("a", nonInlineNotes.eq(i)));
+        }
+    },
+
+    /**
+     * Highlights the note in the side pane
+     * @private
+     */
+    _doHighlightNoteInPane: function (passageContent, link) {
+        var self = this;
+        var inlineLink = $(".rightNotesPane strong", passageContent).filter(function () {
+            return $(this).text() == link.text();
+        }).closest(".margin");
+
+        var links = $(inlineLink).add(link);
+
+        $(links).hover(function () {
+                self._highlightBothLinks(links);
+            },
+            function () {
+                self._unhighlighBothLinks(links);
+            });
+        $(links).on("touchstart", function () {
+            self._highlightBothLinks(links);
+        });
+        $(links).on("touchend", function () {
+            self._unhighlighBothLinks(links)
+        });
+    },
+    _highlightBothLinks: function (links) {
+        links.addClass("secondaryBackground");
+    },
+    _unhighlighBothLinks: function (links) {
+        links.removeClass("secondaryBackground");
+    },
+
     createCopy: function () {
         if ($("#copy").html().length == 0) {
             $("#copy").html("<div style='padding:4px;'><h6>Copy feature coming soon</h6></div>");
@@ -200,7 +250,7 @@ var SidebarView = Backbone.View.extend({
                 .append(mainWord.accentedUnicode))
                 .append(" (")
                 .append("<span class='transliteration'>" + mainWord.stepTransliteration + "</span>")
-                .append(") “")
+                .append(") `")
                 .append(mainWord.stepGloss)
                 .append("” ")
                 .append($(" <span title='" + __s.strong_number + "'>").append(" (" + mainWord.strongNumber + ")").addClass("strongNumberTagLine"))
@@ -322,12 +372,12 @@ var SidebarView = Backbone.View.extend({
     },
     _createTabHeadersContainer: function () {
         var template = '<ul class="nav nav-tabs">' +
-            '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b>R</b></a></li>' +
-            '<li><a href="javascript:void(0)" class="" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"><b>א</b></a></li>' +
+            '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b style="font-family:Times New Roman;">R</b></a></li>' +
+            '<li><a href="javascript:void(0)" class="" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"><b style="font-familiy:Times New Roman;">V</b></a></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-stats" title="<%= __s.passage_stats %>" data-toggle="tab" data-target="#analysis"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-bookmark" title="<%= __s.bookmarks_and_recent_texts %>" data-toggle="tab" data-target="#history"></li>' +
-            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b>?</b></li>' +
-            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#copy"><b>C</b></li>' +
+            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b style="font-family:Times New Roman;">?</b></li>' +
+            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#copy"><b style="font-family:Times New Roman;">C</b></li>' +
             '</ul>';
 
         var tabContainer = $(_.template(template)());

@@ -14,6 +14,9 @@ var PassageDisplayView = DisplayView.extend({
             this.listenTo(this.model, "font:change", this.handleFontSizeChange, this);
             this.listenTo(this.model, "afterRender", this.scrollToTargetLocation, this);
             this.partRendered = options.partRendered;
+
+            this.listenTo(Backbone.Events, "updateXREF", this.doUpdateXREF);
+
             this.render();
         },
 
@@ -47,10 +50,9 @@ var PassageDisplayView = DisplayView.extend({
                 this.doFonts(passageHtml, options, interlinearMode, languages);
                 this.doSwapInterlinearLink(passageHtml);
                 this._doInlineNotes(passageHtml, passageId);
-                 this._doSideNotes(passageHtml, passageId, version);
-                // this._doNonInlineNotes(passageHtml);
+
                 this._doVerseNumbers(passageId, passageHtml, options, interlinearMode, version);
-                // this._doHideEmptyNotesPane(passageHtml);
+                this._doHideEmptyNotesPane(passageHtml);
                 this._adjustTextAlignment(passageHtml);
                 step.util.restoreFontSize(this.model, passageHtml);
                 this._addStrongHandlers(passageId, passageHtml);
@@ -68,7 +70,8 @@ var PassageDisplayView = DisplayView.extend({
                 this.doInterlinearVerseNumbers(passageHtml, interlinearMode, options);
                 this.scrollToTargetLocation(passageContainer);
 
-                $("#xreference").html("<div class=''>" + $('.notesPane').html() + "</div>");
+                $("#xreference").html("<div class='rightNotesPane'>" + $('.notesPane').html() + "</div>");
+                this.doUpdateXREF();
 
                 //give focus:
                 $(".passageContentHolder", step.util.getPassageContainer(step.util.activePassageId())).focus();
@@ -287,9 +290,9 @@ var PassageDisplayView = DisplayView.extend({
             var atPosition = passageId == 0 ? "right" : "left";
 
             //remove click functionality from verse headers...
-            $(".notesPane > a", passageContent).click(function(e) { e.preventDefault(); })
+            $(".rightNotesPane > a", passageContent).click(function(e) { e.preventDefault(); })
 
-            var xrefs = $(".notesPane [xref]", passageContent);
+            var xrefs = $(".rightNotesPane [xref]", passageContent);
             for (var i = 0; i < xrefs.length; i++) {
                 var item = xrefs.eq(i);
                 var xref = item.attr("xref");
@@ -407,6 +410,20 @@ var PassageDisplayView = DisplayView.extend({
             }
         },
 
+
+        /**
+         * Update UI for Cross reference
+         * @param passageContent
+         * @private
+         */
+        doUpdateXREF: function () {
+            var passageId = this.model.get("passageId");
+            var version = this.model.get("masterVersion");
+
+            this._doNonInlineNotes($(".mainPanel"));
+            this._doSideNotes($(".mainPanel"), passageId, version);
+        },
+
         /**
          * Looks at non-inline notes and renders those!
          * @param passageContent
@@ -427,7 +444,7 @@ var PassageDisplayView = DisplayView.extend({
          */
         _doHighlightNoteInPane: function (passageContent, link) {
             var self = this;
-            var inlineLink = $(".notesPane strong", passageContent).filter(function () {
+            var inlineLink = $(".rightNotesPane strong", passageContent).filter(function () {
                 return $(this).text() == link.text();
             }).closest(".margin");
 
