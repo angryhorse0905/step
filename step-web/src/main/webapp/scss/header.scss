@@ -30,11 +30,15 @@
     &.form-group, form {
       input {
         margin-top: -2px;
-        height: 34px;
+        height: 28px;
+        font-size:12px;
+        padding: 5px;
+        border: 0;
+        background-color: #2a3f63;
       }
       margin-bottom: 0px;
       button {
-        min-width: 80px;
+        //min-width: 80px;
         text-shadow: none;
       }
     }
@@ -43,11 +47,107 @@
   .navbar-brand {
 
     @media screen and (min-width: $stepXSBootstrap) {
-      padding-left: 70px;
+      padding-left: 30px;
     }
-    padding-bottom: 0px;
+    padding-bottom: 5px;
     padding-top: 5px;
     height: $header_height;
+
+    #searchform {
+      margin-top: 8px;
+      margin-right: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+
+    #searchform input {
+      width:260px;
+      border: solid 1px #0663C7;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+
+      color: lightgray;
+
+      /* only needed for webkit browsers which show a rectangular outline;
+        * others do not do outline when radius used.
+        * android browser still displays a big outline
+        */
+      outline: 0;
+
+      /* this is needed for iOS devices otherwise a shadow/line appears at the
+         * top of the input. depending on the ratio of radius to height it will
+         * go all the way across the full width of the input and look really messy.
+         * ensure the radius is no more than half the full height of the input,
+         * and the following is set, and everything will render well in iOS.
+         */
+      -webkit-appearance: none;
+    }
+
+    #searchform input:focus {
+      border-color: lightgrey;
+    }
+
+    #searchform {
+      input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #CCCCCC;
+      }
+      input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #CCCCCC;
+        opacity:  1;
+      }
+      input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #CCCCCC;
+        opacity:  1;
+      }
+      input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #CCCCCC;
+      }
+      input:-ms-input-placeholder { /* Microsoft Edge */
+        color:    #CCCCCC;
+      }
+
+      button {
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        width: 30px;
+
+
+        //Only styling from here, you can discard this
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        border: none;
+        background: transparent;
+        border-radius: 3px;
+        padding: 14px 8px;
+
+        transition: all .2s;
+
+        &:hover {
+          //background-color: #37C88D;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .nav-list {
+      position: relative;
+      left: 0;
+      display: block;
+      float: left;
+      margin: 10px 10px 0 0;
+      list-style: none;
+      line-height: 22px;
+    }
+
+    .nav-list>li {
+      display: block;
+      float: left;
+      margin: 0px 10px;
+    }
 
     //find button to be aligned to top
     #masterSearch {
