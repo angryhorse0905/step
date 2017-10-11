@@ -121,6 +121,9 @@
                     </li>
                 </ul>
             </div>
+            <div class="grid-content">
+
+            </div>
         </div>
         <!-- Fixed navbar -->
         <div class="navbar navbar-default navbar-fixed-top " >

@@ -41,6 +41,11 @@ var MainSearchView = Backbone.View.extend({
             }
 
         });
+
+        require(["menu_extras"], function () {
+            new PickBibleView({ model: step.settings, searchView: self });
+        });
+
         // End Added
 
         this.masterSearch.select2({

@@ -94,10 +94,10 @@ var PickBibleView = Backbone.View.extend({
         var self = this;
         this.searchView = opts.searchView;
 
-        this.$el.append(this.modalPopupTemplate({
-            view: this,
-            myLanguage: "en"
-        }));
+        // this.$el.append(this.modalPopupTemplate({
+        //     view: this,
+        //     myLanguage: "en"
+        // }));
 
         //make the right button active
         var language = this._getLanguage();
@@ -111,10 +111,12 @@ var PickBibleView = Backbone.View.extend({
         });
 
         this.$el.find(this._getSelectedTab()).addClass("active");
-        this.bibleVersions = this.$el.find("#bibleVersions").modal({ show: true});
+        // this.bibleVersions = this.$el.find("#bibleVersions").modal({ show: true});
+
         this.$el.find("input[type='text']").focus();
         this.$el.find(".btn").click(this.handleLanguageButton);
-        this.$el.find(".closeModal").click(this.closeModal);
+        // this.$el.find(".closeModal").click(this.closeModal);
+
         this._filter();
     },
     closeModal: function (ev) {
@@ -212,7 +214,12 @@ var PickBibleView = Backbone.View.extend({
             }
         }
         this.$el.find(".tab-pane").empty();
-        this.$el.find(selectedTab).append(this.versionTemplate({
+
+        // this.$el.find(selectedTab).append(this.versionTemplate({
+        //     versions: bibleList
+        // }));
+
+        $("#biblesearch").find('.grid-content').append(this.versionTemplate({
             versions: bibleList
         }));
 
