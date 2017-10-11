@@ -110,11 +110,11 @@
                     <li>
                         <input type="radio" value="1" name="bibleLang" id="optlang1" />
                         <label for="optlang1">English</label>
-                    </li>
+                    </li>&nbsp;&nbsp;&nbsp;&nbsp;|
                     <li>
                         <input type="radio" value="1" name="bibleLang" id="optlang2" />
                         <label for="optlang2">Heb/Greek</label>
-                    </li>
+                    </li>&nbsp;&nbsp;&nbsp;&nbsp;|
                     <li>
                         <input type="radio" value="1" name="bibleLang" id="optlang3" />
                         <label for="optlang3">Non-English</label>
