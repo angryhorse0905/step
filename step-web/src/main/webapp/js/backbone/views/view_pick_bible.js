@@ -7,7 +7,7 @@ var PickBibleView = Backbone.View.extend({
         '<li class="list-group-item" data-initials="<%= languageBible.shortInitials %>">' +
         '<a class="glyphicon glyphicon-info-sign" title="<%= __s.passage_info_about_version %>" target="_blank" href="http://<%= step.state.getDomain() %>/version.jsp?version=<%= languageBible.shortInitials %>"></a>' +
         '<a class="resource" href="javascript:void(0)">' +
-        '<%= languageBible.shortInitials %> - <%= languageBible.name %> <span class="pull-right"><%= step.util.ui.getFeaturesLabel(languageBible) %></span></a></li>' +
+        '<%= languageBible.shortInitials %> - <%= languageBible.name %> </a></li>' +
         '<% }) %>' +
         '</li>' +
         '</ul>' +

@@ -1,20 +1,8 @@
 @import 'template_variables';
 @import 'mixins';
 
-#bibleVersions {
+#biblesearch {
 
-  .modal-body {
-    padding: 5px;
-  }
-  .modal-footer{
-    padding: 10px 20px 10px 0px;
-    .tagLine {
-      float: left;
-      padding-top: 10px;
-      color: darkgrey;
-      font-style: italic;
-    }
-  }
   span.form-group {
     margin-left: 3px;
   }
