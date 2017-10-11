@@ -103,7 +103,16 @@
 <body xmlns:fb="http://ogp.me/ns/fb#">
     <!-- Wrap all page content here -->
     <div id="wrap">
-    
+        <div class="grid-bible" id="biblesearch">
+            <div class="arrow-up"></div>
+            <div class="grid-header">
+                <span class="">
+                    <label class="options"><input type="radio" name="bibleLang">English</label>
+                    <label class="options"><input type="radio" name="bibleLang">Non-English</label>
+                    <label class="options"><input type="radio" name="bibleLang">Ancient</label>
+                </span>
+            </div>
+        </div>
         <!-- Fixed navbar -->
         <div class="navbar navbar-default navbar-fixed-top " >
             <div>
@@ -118,14 +127,13 @@
 
                                     <ul class="nav-list">
                                         <li class="navbar-item nav-browse">
-                                            <a href="/icon-sets/featured" title="Choose your bible">
+                                            <a href="#" id="btnBible" title="Choose your bible">
                                                 <span>ESV</span> <img src="images/down-arrow.png"></img>
                                             </a>
                                         </li>
                                         <li class="navbar-item nav-designers">
-                                            <a href="/designers" title="Browse icon designers">
-                                                <span>GEN</span>&nbsp;
-                                                <img src="images/down-arrow.png"></img>
+                                            <a href="#" id="btnCommentary" title="Choose your commentary or book">
+                                                <span>ESV</span> <img src="images/down-arrow.png"></img>
                                             </a>
                                         </li>
                                         <li class="navbar-item nav-customicondesign hidden-tablet">

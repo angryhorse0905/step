@@ -24,6 +24,25 @@ var MainSearchView = Backbone.View.extend({
         this.listenTo(Backbone.Events, "search:add", this._appendVersions);
         this.listenTo(Backbone.Events, "search:remove", this._removeVersion);
 
+        // Added by Jimmy
+        $("#btnBible").click(function(e) {
+            e.stopPropagation();
+            $("#biblesearch").toggle();
+            return false;
+        });
+
+        $(document).click( function(e){
+            var container = $(".grid-bible");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                container.hide();
+            }
+
+        });
+        // End Added
+
         this.masterSearch.select2({
             minimumInputLength: 2,
             openOnEnter: false,
