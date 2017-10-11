@@ -65,11 +65,23 @@
   color: #ffffff;
 }
 
+.grid-header ul {
+  list-style: none;
+}
+.grid-header li {
+  display: inline-block;
+  margin-right: 0px;
+}
 .grid-header input {
   visibility: hidden;
 }
-.grid-header input:checked {
+.grid-header label {
+  cursor: pointer;
+}
+.grid-header input:checked + label {
   font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
 }
 
 .arrow-up {

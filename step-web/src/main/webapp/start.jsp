@@ -106,11 +106,20 @@
         <div class="grid-bible" id="biblesearch">
             <div class="arrow-up"></div>
             <div class="grid-header">
-                <span class="">
-                    <label class="options"><input type="radio" name="bibleLang">English</label>
-                    <label class="options"><input type="radio" name="bibleLang">Non-English</label>
-                    <label class="options"><input type="radio" name="bibleLang">Ancient</label>
-                </span>
+                <ul>
+                    <li>
+                        <input type="radio" value="1" name="bibleLang" id="optlang1" />
+                        <label for="optlang1">English</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="1" name="bibleLang" id="optlang2" />
+                        <label for="optlang2">Heb/Greek</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="1" name="bibleLang" id="optlang3" />
+                        <label for="optlang3">Non-English</label>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- Fixed navbar -->
