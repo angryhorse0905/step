@@ -140,18 +140,17 @@
                                     <ul class="nav-list">
                                         <li class="navbar-item nav-browse">
                                             <a href="#" id="btnBible" title="Choose your bible">
-                                                <span>ESV</span> <img src="images/down-arrow.png"></img>
+                                                <span>ESV</span>
                                             </a>
                                         </li>
                                         <li class="navbar-item nav-designers">
                                             <a href="#" id="btnCommentary" title="Choose your commentary or book">
-                                                <span>ESV</span> <img src="images/down-arrow.png"></img>
+                                                <span>ESV</span>
                                             </a>
                                         </li>
                                         <li class="navbar-item nav-customicondesign hidden-tablet">
                                             <a href="/custom-icon-design" title="Custom Icon Design">
                                                 <span>GEN </span>
-                                                <img src="images/down-arrow.png"></img>
                                             </a>
                                         </li>
                                     </ul>

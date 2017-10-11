@@ -149,6 +149,23 @@
       margin: 0px 8px;
     }
 
+    .nav-list span {
+      max-width: 150px;
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .nav-list span:after{
+      content: "";
+      margin: 0 0.5em;
+      display:inline-flex;
+      border: 7px solid transparent;
+      border-top:8px solid #ffffff;
+      border-bottom:0 none;
+    }
+
     //find button to be aligned to top
     #masterSearch {
       border: 0 !important;
