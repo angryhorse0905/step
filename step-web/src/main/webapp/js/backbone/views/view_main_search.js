@@ -497,12 +497,12 @@ var MainSearchView = Backbone.View.extend({
 
         // var replaceItem = this.masterSearch.select2("container").find(".replaceItem");
         // var replaceItemParent = replaceItem.parent().parent().first();
-        var newItem = { item: data.value, itemType: data.itemType};
+        // var newItem = { item: data.value, itemType: data.itemType};
         // if (replaceItemParent.length > 0) {
         //     var replaceItemIndex = replaceItemParent.index();
         //     originalData.splice(replaceItemIndex, 1, newItem);
         // } else {
-            originalData.push(newItem);
+        //     originalData.push(newItem);
         // }
 
         this._setData(originalData);
