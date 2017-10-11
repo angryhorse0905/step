@@ -8,11 +8,12 @@ var MainSearchView = Backbone.View.extend({
     },
     //context items are of the form { itemType: x, value: y }
     specificContext: [],
+    selectedBible: [],
     initialize: function () {
         var self = this;
         this.ignoreOpeningEvent = false;
         this.clearContextAfterSearch = false;
-        this.masterSearch = this.$el.find("#masterSearch");
+        // this.masterSearch = this.$el.find("#masterSearch");
         this.specificContext = [];
         this.startTimes = {};
         this.allContexts = [REFERENCE, VERSION, LIMIT, EXAMPLE_DATA];
@@ -250,25 +251,32 @@ var MainSearchView = Backbone.View.extend({
         this.showAnalysis();
     },
     _setData: function (values) {
-        // this.masterSearch.select2("data", values, true);
+        this.selectedBible = values;
+
         var selectedBibles = "";
 
-        for (var i = 0; i < values.length; i++) {
-            if (values[i].itemType == VERSION) {
+        var unique = $.unique(values);
+
+        for (var i = 0; i < unique.length; i++) {
+            if (unique[i].itemType == VERSION) {
                 if (selectedBibles != "") {
                     selectedBibles += ",";
                 }
-                selectedBibles += values[i].item.initials;
+                selectedBibles += unique[i].item.initials;
             }
+        }
+
+        if (selectedBibles == "") {
+            selectedBibles = "Bibles";
         }
 
         $("#btnBible").find('span').html(selectedBibles);
 
         this._addTokenHandlers();
-        this.masterSearch.select2("container").find("ul.select2-choices").sortable({});
+        // this.masterSearch.select2("container").find("ul.select2-choices").sortable({});
     },
     _resetReplaceItems: function () {
-        this.masterSearch.select2("container").find(".replaceItem").removeClass("replaceItem");
+        // this.masterSearch.select2("container").find(".replaceItem").removeClass("replaceItem");
     },
     _addTokenHandlers: function (tokenElement) {
         var tokens;
@@ -325,6 +333,9 @@ var MainSearchView = Backbone.View.extend({
             self._searchExampleData(ev, $(this).attr("data-item-type"), ($(this).attr("data-select-id") || "").replace(/\./g, "").substring(0,2));
         });
     },
+    _getBible: function() {
+        return this.selectedBible;
+    },
     _searchExampleData: function (ev, itemType, term) {
         ev.stopPropagation();
 
@@ -338,16 +349,17 @@ var MainSearchView = Backbone.View.extend({
 
         this._addSpecificContext(EXAMPLE_DATA, itemType);
         this._addSpecificContext(LIMIT, itemType);
-        $.data(this.masterSearch.select2("container"), "select2-last-term", null);
-        this.masterSearch.select2("open");
-        this.masterSearch.select2("search", term);
+        // $.data(this.masterSearch.select2("container"), "select2-last-term", null);
+        // this.masterSearch.select2("open");
+        // this.masterSearch.select2("search", term);
         this.ignoreOpeningEvent = false;
     },
     openAdvancedSearch: function (initialView, value) {
         var self = this;
         require(["menu_extras"], function () {
             //find master version
-            var dataItems = self.masterSearch.select2("data");
+            // var dataItems = self.masterSearch.select2("data");
+            var dataItems = self._getBible();
             var masterVersion = REF_VERSION;
             for (var i = 0; i < dataItems; i++) {
                 if (dataItems[i].itemType == VERSION) {
@@ -470,7 +482,8 @@ var MainSearchView = Backbone.View.extend({
         return this._markMatch(item.gloss, term) + " (<span class='transliteration'>" + this._markMatch(item.stepTransliteration, term) + "</span> - " + '<span class="' + (hebrew ? 'hbFontMini' : 'unicodeFontMini') + '">' + item.matchingForm + "</span>)";
     },
     _getCurrentInitials: function () {
-        var data = this.masterSearch.select2("data");
+        // var data = this.masterSearch.select2("data");
+        var data = this._getBible();
         var initials = [];
         for (var i = 0; i < data.length; i++) {
             initials.push(data[i].item.shortInitials);
@@ -478,26 +491,29 @@ var MainSearchView = Backbone.View.extend({
         return initials;
     },
     _appendVersions: function (data) {
-        var originalData = this.masterSearch.select2("data");
+        // var originalData = this.masterSearch.select2("data");
+        var originalData = this._getBible();
         originalData.push({ item: data.value, itemType: data.itemType});
 
-        var replaceItem = this.masterSearch.select2("container").find(".replaceItem");
-        var replaceItemParent = replaceItem.parent().parent().first();
+        // var replaceItem = this.masterSearch.select2("container").find(".replaceItem");
+        // var replaceItemParent = replaceItem.parent().parent().first();
         var newItem = { item: data.value, itemType: data.itemType};
-        if (replaceItemParent.length > 0) {
-            var replaceItemIndex = replaceItemParent.index();
-            originalData.splice(replaceItemIndex, 1, newItem);
-        } else {
+        // if (replaceItemParent.length > 0) {
+        //     var replaceItemIndex = replaceItemParent.index();
+        //     originalData.splice(replaceItemIndex, 1, newItem);
+        // } else {
             originalData.push(newItem);
-        }
+        // }
+
         this._setData(originalData);
-        this._resetReplaceItems();
-        this.masterSearch.select2("close");
+        // this._resetReplaceItems();
+        // this.masterSearch.select2("close");
         this._reEvaluateMasterVersion();
     },
     _removeVersion: function (data) {
         //find the element
-        var versions = this.masterSearch.select2("data");
+        // var versions = this.masterSearch.select2("data");
+        var versions = this._getBible();
         for (var i = 0; i < versions.length; i++) {
             if (versions[i].item.initials == data.value.initials || versions.shortInitials == data.value.initials) {
                 versions.splice(i, 1);
@@ -516,7 +532,9 @@ var MainSearchView = Backbone.View.extend({
     },
     search: function () {
         console.log("Searching...");
-        var options = this.masterSearch.select2("data");
+        // var options = this.masterSearch.select2("data");
+        var options = this._getBible();
+
         this._trackSearch(options);
         var args = "";
         for (var ii = 0; ii < options.length; ii++) {
@@ -594,7 +612,7 @@ var MainSearchView = Backbone.View.extend({
         step.router.navigateSearch(args);
     },
     getCurrentInput: function () {
-        return this.masterSearch.select2("container").find(".select2-input").val();
+        // return this.masterSearch.select2("container").find(".select2-input").val();
     },
     patch: function (results, term) {
         //check we don't have a limit:
@@ -961,7 +979,7 @@ var MainSearchView = Backbone.View.extend({
             model = step.util.activePassage();
         }
 
-        var initialData = this.masterSearch.select2("data");
+        var initialData = this._getBible();
 
         //overwrite all the data
         var data = [];
@@ -1019,7 +1037,7 @@ var MainSearchView = Backbone.View.extend({
             versions.removeClass("masterVersion");
             masterVersion.addClass("masterVersion");
             masterVersion.attr("title", masterVersion.attr("title") + "\n" + __s.master_version_info);
-            this.masterVersion = _.findWhere(this.masterSearch.select2("data"), { itemType: "version" });
+            this.masterVersion = _.findWhere(this._getBible(), { itemType: "version" });
         } else {
             this.masterVersion = null;
         }

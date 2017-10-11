@@ -57,8 +57,9 @@ var PickBibleView = Backbone.View.extend({
         [__s.uncategorized_resources, []]
     ],
     el: function () {
-        var el = $("<div>");
-        $("body").append(el);
+        // var el = $("<div>");
+        // $("body").append(el);
+        var el = $("#biblesearch");
         return el;
     },
     _populateAncientBibles: function (arr) {
@@ -246,7 +247,7 @@ var PickBibleView = Backbone.View.extend({
                 el.addClass("active");
             }
         });
-        this._addTagLine();
+        // this._addTagLine();
     },
     _addTagLine: function(){
         var bibleVersions = $("#bibleVersions");
