@@ -24,255 +24,246 @@ var MainSearchView = Backbone.View.extend({
         this.listenTo(Backbone.Events, "search:add", this._appendVersions);
         this.listenTo(Backbone.Events, "search:remove", this._removeVersion);
 
-        // Added by Jimmy
-        $("#btnBible").click(function(e) {
-            e.stopPropagation();
-            $("#biblesearch").toggle();
-            return false;
-        });
 
-        $(document).click( function(e){
-            var container = $(".grid-bible");
 
-            // if the target of the click isn't the container nor a descendant of the container
-            if (!container.is(e.target) && container.has(e.target).length === 0)
-            {
-                container.hide();
-            }
+        // this.masterSearch.select2({
+        //     minimumInputLength: 2,
+        //     openOnEnter: false,
+        //     id: function (entry) {
+        //         if(entry == null) {
+        //             return null;
+        //         }
+        //
+        //         var id = entry.itemType + "-";
+        //         switch (entry.itemType) {
+        //             case REFERENCE:
+        //                 id += entry.item.fullName + step.util.guid();
+        //                 break;
+        //             case VERSION:
+        //                 id += entry.item.shortInitials;
+        //                 break;
+        //             case GREEK:
+        //             case GREEK_MEANINGS:
+        //             case HEBREW_MEANINGS:
+        //             case HEBREW:
+        //                 //for these searches, we prevent multiple searches for the same strong number
+        //                 //and therefore share an id.
+        //                 id += entry.item.strongNumber;
+        //                 break;
+        //             //some searches default to their item
+        //             case SYNTAX:
+        //             case TEXT_SEARCH:
+        //                 id += entry.item.value;
+        //                 break;
+        //             case SUBJECT_SEARCH:
+        //                 id += (entry.item.searchTypes || []).join("-") + ":" + entry.item.value;
+        //                 break;
+        //             case MEANINGS:
+        //                 id += entry.item.gloss;
+        //                 break;
+        //             case EXACT_FORM:
+        //                 id += entry.item.text;
+        //                 break;
+        //             case TOPIC_BY_REF:
+        //             case RELATED_VERSES:
+        //             default:
+        //                 id += entry.item;
+        //                 break;
+        //         }
+        //         return id;
+        //     },
+        //     formatInputTooShort: function (input, min) {
+        //
+        //         var n = min - input.length;
+        //         var message = sprintf(__s.x_more_characters, n);
+        //         var labels = $("<span>").addClass("searchLabel")
+        //             .append($("<a>").attr("data-toggle", "modal").attr("data-target", "#bibleVersions").append(__s.all_versions).attr("title", __s.all_versions)
+        //                 .on("click", function () {
+        //                     view.pickBible();
+        //                 })).append("&nbsp;|&nbsp;").append($("<a>").append(__s.search_advanced).on('click', function () {
+        //                 view.openAdvancedSearch();
+        //             }));
+        //         var container = $("<span>").append(labels).append($('<span class="message">').append(message));
+        //         return  container;
+        //     },
+        //     ajax: {
+        //         url: function (term, page) {
+        //             var url = SEARCH_AUTO_SUGGESTIONS + term;
+        //             var contextArgs = "";
+        //             if (self.specificContext.length != 0) {
+        //                 for (var i = 0; i < self.specificContext.length; i++) {
+        //                     contextArgs += self.specificContext[i].itemType + "=" + self.specificContext[i].value;
+        //                     if (i < self.specificContext.length) {
+        //                         contextArgs += '|';
+        //                     }
+        //                 }
+        //             }
+        //
+        //             if (self.clearContextAfterSearch) {
+        //                 self._removeSpecificContext(EXAMPLE_DATA);
+        //             }
+        //
+        //             var lang = step.state.language();
+        //             var langParam = step.util.isBlank(lang) ? "" : "?lang=" + lang;
+        //
+        //             return url + "/" + encodeURIComponent(contextArgs) + langParam;
+        //         },
+        //         dataType: "json",
+        //         quietMillis: KEY_PAUSE,
+        //         cache: true,
+        //         results: function (data, page) {
+        //             var isExpanded = self._getSpecificContext(LIMIT) != null;
+        //             var term = $.data(view.masterSearch.select2("container"), "select2-last-term");
+        //             var datum = [];
+        //             for (var ii = 0; ii < data.length; ii++) {
+        //                 var itemAndText = view.convertResultTermToTypedOptions(data[ii], datum, term, isExpanded);
+        //
+        //                 datum.push({
+        //                     text: itemAndText.text,
+        //                     item: itemAndText.item,
+        //                     itemType: data[ii].itemType });
+        //             }
+        //             return { results: view.patch(datum, term) };
+        //         }
+        //     },
+        //
+        //     multiple: true,
+        //     formatResult: view.formatResults,
+        //     matcher: view.matchDropdownEntry,
+        //     /**
+        //      * Formats the entry in the multi-select text input, once selected from the dropdown.
+        //      * @param entry
+        //      * @returns {*}
+        //      */
+        //     formatSelection: function (entry) {
+        //         var versions = _.where($("#masterSearch").select2("data"), { itemType: "version" }) || [];
+        //         view.masterVersion = versions.length > 0 ? versions[0] : null;
+        //         if(view.masterVersion == null && entry != null && entry.itemType == VERSION) {
+        //             view.masterVersion = entry;
+        //         }
+        //
+        //         return step.util.ui.renderEnhancedToken(entry, versions.length > 1);
+        //     },
+        //     escapeMarkup: function (m) {
+        //         return m;
+        //     },
+        //     formatResultCssClass: view.formatResultCssClass,
+        //     formatSelectionCssClass: view.formatResultCssClass
+        // }).on("select2-selecting", function (event) {
+        //     var select2Input = $(this);
+        //     if (event.object && event.object.itemType == REFERENCE &&
+        //         self._getSpecificContext(REFERENCE) == null &&
+        //         (event.object.item.sectionType == 'BIBLE_BOOK' || event.object.item.sectionType == 'APOCRYPHA')
+        //         && event.object.item.wholeBook
+        //         ) {
+        //         event.preventDefault();
+        //         self.isOpeningBibleList = true;
+        //         self._addSpecificContext(REFERENCE, event.object.item.osisID);
+        //
+        //         //wipe the last term to force a re-select
+        //         $.data(self.masterSearch.select2("container"), "select2-last-term", null);
+        //         select2Input.select2("search", event.object.item.shortName);
+        //     } else if (event.object.item.grouped) {
+        //         event.preventDefault();
+        //         $.data(self.masterSearch.select2("container"), "select2-last-term", null);
+        //         self._addSpecificContext(LIMIT, event.object.itemType);
+        //         select2Input.select2("search", self.getCurrentInput());
+        //         select2Input.select2("container").find("input").focus();
+        //     } else if (event.object.item.exit) {
+        //         //exiting, so clear limit context
+        //         event.preventDefault();
+        //         self._removeSpecificContext(LIMIT);
+        //         $.data(self.masterSearch.select2("container"), "select2-last-term", null);
+        //         select2Input.select2("search", self.getCurrentInput());
+        //     }
+        //     return;
+        // }).on("selected", function (event) {
+        //     //if we're replacing an item, then remove it
+        //     var container = self.masterSearch.select2("container");
+        //     var term = container.find("input").val() || "";
+        //
+        //     step.util.trackAnalytics("suggest", "termPrefix", term);
+        //     step.util.trackAnalytics("suggest", "termPrefixLength", term.length);
+        //     step.util.trackAnalytics("suggest", "termType", ((event.choice) || {}).itemType);
+        //     step.util.trackAnalytics("suggest", "termText", ((event.choice) || {}).text);
+        //
+        //     var replaceItem = container.find(".replaceItem");
+        //     var replaceItemParent = replaceItem.parent().parent().first();
+        //     var newItem;
+        //     var data = self.masterSearch.select2("data");
+        //     if (replaceItemParent.length > 0) {
+        //         var replaceItemIndex = replaceItemParent.index();
+        //         data.splice(replaceItemIndex, 1, data[data.length - 1]);
+        //         //remove the last item as well
+        //         data.pop();
+        //     }
+        //
+        //     //needs to be outside if statement to ensure we recreate token handlers
+        //     self._setData(data);
+        //
+        //     //now get rid of all .replaceItems
+        //     self._resetReplaceItems();
+        //     //get last item in list
+        //     var select2Input = $(this);
+        //     var values = select2Input.select2("data") || [];
+        //     if (values.length == 0) {
+        //         return;
+        //     }
+        //     self._reEvaluateMasterVersion();
+        //     container.find("input").val("");
+        //     self._removeSpecificContext([REFERENCE, VERSION, LIMIT]);
+        // }).on("select2-opening", function (event) {
+        //     //remove any context that has references
+        //     if (!self.ignoreOpeningEvent) {
+        //         self._removeSpecificContext(self.allContexts);
+        //         self._resetReplaceItems();
+        //     }
+        //
+        //     //add the first version selected to the context
+        //     var data = self.masterSearch.select2("data") || [];
+        //     for (var i = 0; i < data.length; i++) {
+        //         if (data[i].itemType == VERSION) {
+        //             self._addSpecificContext(VERSION, data[i].item.initials);
+        //             break;
+        //         }
+        //     }
+        // }).on("select2-removed", function () {
+        //     //re-evaluate master version
+        //     self._reEvaluateMasterVersion();
+        // });
 
-        });
-
-        require(["menu_extras"], function () {
-            new PickBibleView({ model: step.settings, searchView: self });
-        });
-
-        // End Added
-
-        this.masterSearch.select2({
-            minimumInputLength: 2,
-            openOnEnter: false,
-            id: function (entry) {
-                if(entry == null) {
-                    return null;
-                }
-
-                var id = entry.itemType + "-";
-                switch (entry.itemType) {
-                    case REFERENCE:
-                        id += entry.item.fullName + step.util.guid();
-                        break;
-                    case VERSION:
-                        id += entry.item.shortInitials;
-                        break;
-                    case GREEK:
-                    case GREEK_MEANINGS:
-                    case HEBREW_MEANINGS:
-                    case HEBREW:
-                        //for these searches, we prevent multiple searches for the same strong number
-                        //and therefore share an id.
-                        id += entry.item.strongNumber;
-                        break;
-                    //some searches default to their item
-                    case SYNTAX:
-                    case TEXT_SEARCH:
-                        id += entry.item.value;
-                        break;
-                    case SUBJECT_SEARCH:
-                        id += (entry.item.searchTypes || []).join("-") + ":" + entry.item.value;
-                        break;
-                    case MEANINGS:
-                        id += entry.item.gloss;
-                        break;
-                    case EXACT_FORM:
-                        id += entry.item.text;
-                        break;
-                    case TOPIC_BY_REF:
-                    case RELATED_VERSES:
-                    default:
-                        id += entry.item;
-                        break;
-                }
-                return id;
-            },
-            formatInputTooShort: function (input, min) {
-
-                var n = min - input.length;
-                var message = sprintf(__s.x_more_characters, n);
-                var labels = $("<span>").addClass("searchLabel")
-                    .append($("<a>").attr("data-toggle", "modal").attr("data-target", "#bibleVersions").append(__s.all_versions).attr("title", __s.all_versions)
-                        .on("click", function () {
-                            view.pickBible();
-                        })).append("&nbsp;|&nbsp;").append($("<a>").append(__s.search_advanced).on('click', function () {
-                        view.openAdvancedSearch();
-                    }));
-                var container = $("<span>").append(labels).append($('<span class="message">').append(message));
-                return  container;
-            },
-            ajax: {
-                url: function (term, page) {
-                    var url = SEARCH_AUTO_SUGGESTIONS + term;
-                    var contextArgs = "";
-                    if (self.specificContext.length != 0) {
-                        for (var i = 0; i < self.specificContext.length; i++) {
-                            contextArgs += self.specificContext[i].itemType + "=" + self.specificContext[i].value;
-                            if (i < self.specificContext.length) {
-                                contextArgs += '|';
-                            }
-                        }
-                    }
-
-                    if (self.clearContextAfterSearch) {
-                        self._removeSpecificContext(EXAMPLE_DATA);
-                    }
-
-                    var lang = step.state.language();
-                    var langParam = step.util.isBlank(lang) ? "" : "?lang=" + lang;
-
-                    return url + "/" + encodeURIComponent(contextArgs) + langParam;
-                },
-                dataType: "json",
-                quietMillis: KEY_PAUSE,
-                cache: true,
-                results: function (data, page) {
-                    var isExpanded = self._getSpecificContext(LIMIT) != null;
-                    var term = $.data(view.masterSearch.select2("container"), "select2-last-term");
-                    var datum = [];
-                    for (var ii = 0; ii < data.length; ii++) {
-                        var itemAndText = view.convertResultTermToTypedOptions(data[ii], datum, term, isExpanded);
-
-                        datum.push({
-                            text: itemAndText.text,
-                            item: itemAndText.item,
-                            itemType: data[ii].itemType });
-                    }
-                    return { results: view.patch(datum, term) };
-                }
-            },
-
-            multiple: true,
-            formatResult: view.formatResults,
-            matcher: view.matchDropdownEntry,
-            /**
-             * Formats the entry in the multi-select text input, once selected from the dropdown.
-             * @param entry
-             * @returns {*}
-             */
-            formatSelection: function (entry) {
-                var versions = _.where($("#masterSearch").select2("data"), { itemType: "version" }) || [];
-                view.masterVersion = versions.length > 0 ? versions[0] : null;
-                if(view.masterVersion == null && entry != null && entry.itemType == VERSION) {
-                    view.masterVersion = entry;
-                }
-
-                return step.util.ui.renderEnhancedToken(entry, versions.length > 1);
-            },
-            escapeMarkup: function (m) {
-                return m;
-            },
-            formatResultCssClass: view.formatResultCssClass,
-            formatSelectionCssClass: view.formatResultCssClass
-        }).on("select2-selecting", function (event) {
-            var select2Input = $(this);
-            if (event.object && event.object.itemType == REFERENCE &&
-                self._getSpecificContext(REFERENCE) == null &&
-                (event.object.item.sectionType == 'BIBLE_BOOK' || event.object.item.sectionType == 'APOCRYPHA')
-                && event.object.item.wholeBook
-                ) {
-                event.preventDefault();
-                self.isOpeningBibleList = true;
-                self._addSpecificContext(REFERENCE, event.object.item.osisID);
-
-                //wipe the last term to force a re-select
-                $.data(self.masterSearch.select2("container"), "select2-last-term", null);
-                select2Input.select2("search", event.object.item.shortName);
-            } else if (event.object.item.grouped) {
-                event.preventDefault();
-                $.data(self.masterSearch.select2("container"), "select2-last-term", null);
-                self._addSpecificContext(LIMIT, event.object.itemType);
-                select2Input.select2("search", self.getCurrentInput());
-                select2Input.select2("container").find("input").focus();
-            } else if (event.object.item.exit) {
-                //exiting, so clear limit context
-                event.preventDefault();
-                self._removeSpecificContext(LIMIT);
-                $.data(self.masterSearch.select2("container"), "select2-last-term", null);
-                select2Input.select2("search", self.getCurrentInput());
-            }
-            return;
-        }).on("selected", function (event) {
-            //if we're replacing an item, then remove it
-            var container = self.masterSearch.select2("container");
-            var term = container.find("input").val() || "";
-
-            step.util.trackAnalytics("suggest", "termPrefix", term);
-            step.util.trackAnalytics("suggest", "termPrefixLength", term.length);
-            step.util.trackAnalytics("suggest", "termType", ((event.choice) || {}).itemType);
-            step.util.trackAnalytics("suggest", "termText", ((event.choice) || {}).text);
-
-            var replaceItem = container.find(".replaceItem");
-            var replaceItemParent = replaceItem.parent().parent().first();
-            var newItem;
-            var data = self.masterSearch.select2("data");
-            if (replaceItemParent.length > 0) {
-                var replaceItemIndex = replaceItemParent.index();
-                data.splice(replaceItemIndex, 1, data[data.length - 1]);
-                //remove the last item as well
-                data.pop();
-            }
-
-            //needs to be outside if statement to ensure we recreate token handlers
-            self._setData(data);
-
-            //now get rid of all .replaceItems
-            self._resetReplaceItems();
-            //get last item in list
-            var select2Input = $(this);
-            var values = select2Input.select2("data") || [];
-            if (values.length == 0) {
-                return;
-            }
-            self._reEvaluateMasterVersion();
-            container.find("input").val("");
-            self._removeSpecificContext([REFERENCE, VERSION, LIMIT]);
-        }).on("select2-opening", function (event) {
-            //remove any context that has references
-            if (!self.ignoreOpeningEvent) {
-                self._removeSpecificContext(self.allContexts);
-                self._resetReplaceItems();
-            }
-
-            //add the first version selected to the context
-            var data = self.masterSearch.select2("data") || [];
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].itemType == VERSION) {
-                    self._addSpecificContext(VERSION, data[i].item.initials);
-                    break;
-                }
-            }
-        }).on("select2-removed", function () {
-            //re-evaluate master version
-            self._reEvaluateMasterVersion();
-        });
-
-        var container = this.masterSearch.select2("container");
-        container.find("input[type='text']").on("keydown", this._handleKeyPressInSearch);
-        container.find("ul.select2-choices")
-            .sortable({})
-            .on('dragstart.h5s', function() {
-                self.masterSearch.select2("onSortStart");
-            }).bind('sortupdate', function() {
-            //Triggered when the user stopped sorting and the DOM position has changed.
-                self.masterSearch.select2("onSortEnd");
-                self._reEvaluateMasterVersion();
-        });
-        this.masterSearch.on('change', function() {
-            self.masterSearch.html(self.masterSearch.val());
-        });
+        // var container = this.masterSearch.select2("container");
+        // container.find("input[type='text']").on("keydown", this._handleKeyPressInSearch);
+        // container.find("ul.select2-choices")
+        //     .sortable({})
+        //     .on('dragstart.h5s', function() {
+        //         self.masterSearch.select2("onSortStart");
+        //     }).bind('sortupdate', function() {
+        //     //Triggered when the user stopped sorting and the DOM position has changed.
+        //         self.masterSearch.select2("onSortEnd");
+        //         self._reEvaluateMasterVersion();
+        // });
+        // this.masterSearch.on('change', function() {
+        //     self.masterSearch.html(self.masterSearch.val());
+        // });
 
         this.showAnalysis();
     },
     _setData: function (values) {
-        this.masterSearch.select2("data", values, true);
+        // this.masterSearch.select2("data", values, true);
+        var selectedBibles = "";
+
+        for (var i = 0; i < values.length; i++) {
+            if (values[i].itemType == VERSION) {
+                if (selectedBibles != "") {
+                    selectedBibles += ",";
+                }
+                selectedBibles += values[i].item.initials;
+            }
+        }
+
+        $("#btnBible").find('span').html(selectedBibles);
+
         this._addTokenHandlers();
         this.masterSearch.select2("container").find("ul.select2-choices").sortable({});
     },
@@ -287,7 +278,7 @@ var MainSearchView = Backbone.View.extend({
             tokens = this.$el.find("[data-select-id]").not('[data-handler]');
         }
 
-        this._addVersionHandlers(tokens);
+        // this._addVersionHandlers(tokens);
         this._addReferenceHandlers(tokens);
         this._addDefaultExampleHandlers(tokens);
         this._addTextHandlers(tokens);
@@ -295,12 +286,12 @@ var MainSearchView = Backbone.View.extend({
 
         tokens.attr('data-handler', true);
     },
-    _addVersionHandlers: function (tokens) {
-        var self = this;
-        $(tokens).filter(".versionItem").click(function (ev) {
-            self.pickBible();
-        });
-    },
+    // _addVersionHandlers: function (tokens) {
+    //     var self = this;
+    //     $(tokens).filter(".versionItem").click(function (ev) {
+    //         self.pickBible();
+    //     });
+    // },
     _addTextHandlers: function (tokens) {
         var self = this;
         $(tokens).filter(".textItem, .syntaxItem, .topicByRefItem").click(function (ev) {
@@ -982,6 +973,30 @@ var MainSearchView = Backbone.View.extend({
         this._setData(data);
         this._addTokenHandlers();
         this._reEvaluateMasterVersion();
+
+        // Added by Jimmy
+        this.pickBible();
+
+        $("#btnBible").click(function(e) {
+            e.stopPropagation();
+
+            $("#biblesearch").toggle();
+            return false;
+        });
+
+        $(document).click( function(e){
+            var container = $(".grid-bible");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                container.hide();
+            }
+
+        });
+
+        // End Added
+
     },
     _handleKeyPressInSearch: function (ev) {
         if (ev.keyCode == 13 && !ev.isPropagationStopped()) {

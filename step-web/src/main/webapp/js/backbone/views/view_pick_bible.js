@@ -227,12 +227,12 @@ var PickBibleView = Backbone.View.extend({
             ev.stopPropagation();
         });
 
-        this.$el.find(".list-group-item").click(function () {
+        $("#biblesearch").find(".list-group-item").click(function () {
             var target = $(this);
             var version = step.keyedVersions[target.data("initials")];
 
             //also look for the item in the rest of the list and mark that
-            self.$el.find("[data-initials='" + version.shortInitials + "']").toggleClass("active");
+            $("#biblesearch").find("[data-initials='" + version.shortInitials + "']").toggleClass("active");
             var added = target.hasClass("active");
             
             if (added) {
