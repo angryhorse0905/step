@@ -115,7 +115,10 @@ var PickBibleView = Backbone.View.extend({
         // this.bibleVersions = this.$el.find("#bibleVersions").modal({ show: true});
 
         this.$el.find("input[type='text']").focus();
-        this.$el.find(".btn").click(this.handleLanguageButton);
+        $("#biblesearch").find('.grid-header').find("label").click(this.handleLanguageButton);
+
+        // this.$el.find(".btn").click(this.handleLanguageButton);  // Commented by Jimmy
+
         // this.$el.find(".closeModal").click(this.closeModal);
 
         this._filter();
@@ -126,7 +129,7 @@ var PickBibleView = Backbone.View.extend({
         this.remove();
     },
     handleLanguageButton: function (ev) {
-        var target = $(ev.target).find("input");
+        var target = $(ev.target).siblings();
         var language = target.data("lang");
 
         this.model.save({
@@ -214,7 +217,7 @@ var PickBibleView = Backbone.View.extend({
                 }
             }
         }
-        this.$el.find(".tab-pane").empty();
+        this.$el.find(".grid-content").empty();
 
         // this.$el.find(selectedTab).append(this.versionTemplate({
         //     versions: bibleList

@@ -108,16 +108,16 @@
             <div class="grid-header">
                 <ul>
                     <li>
-                        <input type="radio" value="1" name="bibleLang" id="optlang1" />
+                        <input type="radio" data-lang="en" name="bibleLang" id="optlang1" />
                         <label for="optlang1">English</label>
                     </li>&nbsp;&nbsp;&nbsp;&nbsp;|
                     <li>
-                        <input type="radio" value="1" name="bibleLang" id="optlang2" />
+                        <input type="radio" data-lang="_ancient" name="bibleLang" id="optlang2" />
                         <label for="optlang2">Heb/Greek</label>
                     </li>&nbsp;&nbsp;&nbsp;&nbsp;|
                     <li>
-                        <input type="radio" value="1" name="bibleLang" id="optlang3" />
-                        <label for="optlang3">Non-English</label>
+                        <input type="radio" data-lang="_all" name="bibleLang" id="optlang3" checked />
+                        <label for="optlang3">All</label>
                     </li>
                 </ul>
             </div>
