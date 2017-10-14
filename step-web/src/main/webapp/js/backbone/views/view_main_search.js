@@ -262,7 +262,7 @@ var MainSearchView = Backbone.View.extend({
                 if (selectedBibles != "") {
                     selectedBibles += ",";
                 }
-                selectedBibles += unique[i].item.initials;
+                selectedBibles += unique[i].item.shortInitials;
             }
         }
 
