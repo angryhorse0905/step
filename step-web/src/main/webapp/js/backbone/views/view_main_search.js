@@ -1000,17 +1000,20 @@ var MainSearchView = Backbone.View.extend({
         // Added by Jimmy
         this.pickBible();
 
-        $("#btnBible").click(function(e) {
+        $(".navbar-item").click(function(e) {
             e.stopPropagation();
 
-            $("#biblesearch").toggle();
-            return false;
-        });
+            var container = $(e.target).closest('.grid-bible');
 
-        $("#btnCommentary").click(function(e) {
-            e.stopPropagation();
 
-            $("#booksearch").toggle();
+            var eid = $(e.target).closest('a').attr("id");
+            if (eid == "btnBible") {
+                $(".grid-bible").not($("#biblesearch")).hide();
+                $("#biblesearch").toggle();
+            } else if (eid == "btnCommentary") {
+                $(".grid-bible").not($("#booksearch")).hide();
+                $("#booksearch").toggle();
+            }
             return false;
         });
 
