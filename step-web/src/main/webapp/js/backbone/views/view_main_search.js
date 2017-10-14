@@ -1007,6 +1007,13 @@ var MainSearchView = Backbone.View.extend({
             return false;
         });
 
+        $("#btnCommentary").click(function(e) {
+            e.stopPropagation();
+
+            $("#booksearch").toggle();
+            return false;
+        });
+
         $(document).click( function(e){
             var container = $(".grid-bible");
 
