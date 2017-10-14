@@ -48,6 +48,20 @@
 
     @media screen and (min-width: $stepXSBootstrap) {
       padding-left: 30px;
+
+      #searchform input {
+        width:200px;
+      }
+    }
+
+    @media (max-width: $stepXS) {
+      #searchform {
+        display:none;
+      }
+
+      .nav-list {
+        padding: 0px;
+      }
     }
     padding-bottom: 5px;
     padding-top: 5px;
