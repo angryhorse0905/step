@@ -254,6 +254,7 @@ var MainSearchView = Backbone.View.extend({
         this.selectedBible = values;
 
         var selectedBibles = "";
+        var title = "";
 
         var unique = $.unique(values);
 
@@ -268,8 +269,12 @@ var MainSearchView = Backbone.View.extend({
 
         if (selectedBibles == "") {
             selectedBibles = "Bibles";
+            title = "Click to choose bibles";
+        } else {
+            title = selectedBibles;
         }
 
+        $("#btnBible").attr('title', title);
         $("#btnBible").find('span').html(selectedBibles);
 
         this._addTokenHandlers();
