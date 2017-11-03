@@ -53,12 +53,17 @@ var SidebarView = Backbone.View.extend({
         $(".tab-content").append(examplesContainer);
 
         if ($("#help").html().length == 0) {
-            $("#help").html("<div style='padding:4px;'><h6>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
+            $("#help").html("<div style='padding:4px;'><h6 style='line-height:16px;'>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
                 "<div style='padding:6px 0px;'>" +
-                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/><br/>" +
+                "<span style='line-height:20px;'>Click \"R\" Tab for Cross References.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"V\" Tab for Vocab definitions of Greek and Hebrew.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"Stats\" Tab for Vocab analysis.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"Bookmark\" Tab for recent history and \"pinned\" favorites .</span><br/>" +
+                "<span style='line-height:20px;'>Click \"C\" Tab for copying verse(s).</span><br/>" +
                 "</div>" +
                 "</div>");
         }
