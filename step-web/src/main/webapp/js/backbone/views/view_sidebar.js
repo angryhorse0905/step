@@ -53,7 +53,14 @@ var SidebarView = Backbone.View.extend({
         $(".tab-content").append(examplesContainer);
 
         if ($("#help").html().length == 0) {
-            $("#help").html("<div style='padding:4px;'><h6>Help Guide coming soon</h6></div>");
+            $("#help").html("<div style='padding:4px;'><h6>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
+                "<div style='padding:6px 0px;'>" +
+                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
+                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
+                "<span><a href='https://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
+                "<span><a href='https://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/>" +
+                "</div>" +
+                "</div>");
         }
 
     },
