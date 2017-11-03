@@ -106,7 +106,7 @@ var SidebarView = Backbone.View.extend({
         this.lexicon = $("<div id='lexicon' class='tab-pane'></div>");
         this.analysis = $("<div id='analysis' class='tab-pane'></div>");
         this.history = $("<div id='history' class='tab-pane'></div>");
-        this.help = $("<div id='help' class='tab-pane'></div>");
+        this.help = $("<div id='help' class='tab-pane active'></div>");
         this.copy = $("<div id='copy' class='tab-pane'></div>");
         tabContent.append(this.xreference);
         tabContent.append(this.lexicon);
@@ -384,11 +384,11 @@ var SidebarView = Backbone.View.extend({
     },
     _createTabHeadersContainer: function () {
         var template = '<ul class="nav nav-tabs">' +
-            '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b style="font-family:Times New Roman;">R</b></a></li>' +
+            '<li><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b style="font-family:Times New Roman;">R</b></a></li>' +
             '<li><a href="javascript:void(0)" class="" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"><b style="font-familiy:Times New Roman;">V</b></a></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-stats" title="<%= __s.passage_stats %>" data-toggle="tab" data-target="#analysis"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-bookmark" title="<%= __s.bookmarks_and_recent_texts %>" data-toggle="tab" data-target="#history"></li>' +
-            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b style="font-family:Times New Roman;">?</b></li>' +
+            '<li class="active"><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b style="font-family:Times New Roman;">?</b></li>' +
             '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#copy"><b style="font-family:Times New Roman;">C</b></li>' +
             '</ul>';
 
