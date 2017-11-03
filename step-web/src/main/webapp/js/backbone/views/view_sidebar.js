@@ -53,12 +53,17 @@ var SidebarView = Backbone.View.extend({
         $(".tab-content").append(examplesContainer);
 
         if ($("#help").html().length == 0) {
-            $("#help").html("<div style='padding:4px;'><h6>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
+            $("#help").html("<div style='padding:4px;'><h6 style='line-height:16px;'>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
                 "<div style='padding:6px 0px;'>" +
-                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
-                "<span><a href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/><br/>" +
+                "<span style='line-height:20px;'>Click \"R\" Tab for Cross References.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"V\" Tab for Vocab definitions of Greek and Hebrew.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"Stats\" Tab for Vocab analysis.</span><br/>" +
+                "<span style='line-height:20px;'>Click \"Bookmark\" Tab for recent history and \"pinned\" favorites .</span><br/>" +
+                "<span style='line-height:20px;'>Click \"C\" Tab for copying verse(s).</span><br/>" +
                 "</div>" +
                 "</div>");
         }
@@ -101,7 +106,7 @@ var SidebarView = Backbone.View.extend({
         this.lexicon = $("<div id='lexicon' class='tab-pane'></div>");
         this.analysis = $("<div id='analysis' class='tab-pane'></div>");
         this.history = $("<div id='history' class='tab-pane'></div>");
-        this.help = $("<div id='help' class='tab-pane'></div>");
+        this.help = $("<div id='help' class='tab-pane active'></div>");
         this.copy = $("<div id='copy' class='tab-pane'></div>");
         tabContent.append(this.xreference);
         tabContent.append(this.lexicon);
@@ -379,11 +384,11 @@ var SidebarView = Backbone.View.extend({
     },
     _createTabHeadersContainer: function () {
         var template = '<ul class="nav nav-tabs">' +
-            '<li class="active"><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b style="font-family:Times New Roman;">R</b></a></li>' +
+            '<li><a href="javascript:void(0)" title="<%= __s.xreference %>" data-toggle="tab" data-target="#xreference"><b style="font-family:Times New Roman;">R</b></a></li>' +
             '<li><a href="javascript:void(0)" class="" title="<%= __s.original_word %>" data-toggle="tab" data-target="#lexicon"><b style="font-familiy:Times New Roman;">V</b></a></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-stats" title="<%= __s.passage_stats %>" data-toggle="tab" data-target="#analysis"></li>' +
             '<li><a href="javascript:void(0)" class="glyphicon glyphicon-bookmark" title="<%= __s.bookmarks_and_recent_texts %>" data-toggle="tab" data-target="#history"></li>' +
-            '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b style="font-family:Times New Roman;">?</b></li>' +
+            '<li class="active"><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#help"><b style="font-family:Times New Roman;">?</b></li>' +
             '<li><a href="javascript:void(0)" class="stepglyph-help" title="<%= __s.quick_tutorial %>" data-toggle="tab" data-target="#copy"><b style="font-family:Times New Roman;">C</b></li>' +
             '</ul>';
 

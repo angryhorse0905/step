@@ -893,7 +893,7 @@ step.util = {
                         morph: data.morph,
                         ref: data.ref,
                         version: data.version,
-                        mode: mode == null ? 'analysis' : mode
+                        mode: mode == null ? 'help' : mode
                     });
                     new SidebarList().add(step.sidebar);
                     new SidebarView({
