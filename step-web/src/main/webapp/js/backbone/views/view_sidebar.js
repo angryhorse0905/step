@@ -53,7 +53,7 @@ var SidebarView = Backbone.View.extend({
         $(".tab-content").append(examplesContainer);
 
         if ($("#help").html().length == 0) {
-            $("#help").html("<div style='padding:4px;'><h6>Help Guide coming soon</h6></div>");
+            $("#help").html("<div style='padding:4px;'><h6>Here are some samples of Greek & Hebrew parallel to English translations:</h6><div style='padding:6px 0px;'><a href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</div></div>");
         }
 
     },
