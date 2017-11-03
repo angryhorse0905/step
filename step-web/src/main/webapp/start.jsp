@@ -165,7 +165,7 @@
                                         </li>
                                         <li class="navbar-item nav-designers">
                                             <a href="#" id="btnCommentary" title="Choose your commentary or book">
-                                                <span>ESV</span>
+                                                <span>Library</span>
                                             </a>
                                         </li>
                                         <li class="navbar-item nav-customicondesign hidden-tablet">
@@ -188,7 +188,7 @@
                                 </div>
                             </div>
                     </div>
-                </div>
+                 </div>
             </div>
         </div>
 
