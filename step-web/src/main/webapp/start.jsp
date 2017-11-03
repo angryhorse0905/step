@@ -118,26 +118,18 @@
 
                                     <ul class="nav-list">
                                         <li class="navbar-item nav-browse">
-                                            <a href="/icon-sets/featured" title="Choose your bible">
-                                                <span>ESV</span> <img src="images/down-arrow.png"></img>
-                                            </a>
+                                            <a href="/icon-sets/featured" title="Choose your bible"><span>ESV</span> <img src="images/down-arrow.png"></img></a>
                                         </li>
                                         <li class="navbar-item nav-designers">
-                                            <a href="/designers" title="Browse icon designers">
-                                                <span>GEN</span>&nbsp;
-                                                <img src="images/down-arrow.png"></img>
-                                            </a>
+                                            <a href="/designers" title="Browse icon designers">Designers</a>
                                         </li>
                                         <li class="navbar-item nav-customicondesign hidden-tablet">
-                                            <a href="/custom-icon-design" title="Custom Icon Design">
-                                                <span>GEN </span>
-                                                <img src="images/down-arrow.png"></img>
-                                            </a>
+                                            <a href="/custom-icon-design" title="Custom Icon Design">Custom Icons</a>
                                         </li>
                                     </ul>
 
                                     <form id="searchform" action="/search/" _lpchecked="1">
-                                        <input value="" name="q" id="inputField" type="text" class="query autocomplete" title="Search" placeholder="Search chapters ..." autocomplete="off">
+                                        <input value="" name="q" id="inputField" type="text" class="query autocomplete" title="Search" placeholder="Search through 1,965,612 icons ..." autocomplete="off">
                                         <button class="btn btn-large btn-search" type="submit">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
