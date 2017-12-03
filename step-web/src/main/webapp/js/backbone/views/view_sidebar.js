@@ -54,13 +54,13 @@ var SidebarView = Backbone.View.extend({
         if ($("#help").html().length == 0) {
             $("#help").html("<div style='padding:4px;'><h6 style='line-height:16px;'>Here are some samples of Greek & Hebrew parallel to English translations:</h6>" +
                 "<div style='padding:6px 0px;'>" +
-                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
-                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
-                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
-                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='color: #2a6496;text-decoration: underline;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=OHB|reference=Gen.1&options=VUGHVN&display=COLUMN'>ESV, NASB &amp; Hebrew</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='color: #2a6496;text-decoration: underline;' href='http://www.e4.org/?q=version=ESV|version=NASB_th|version=SBLG|reference=Eph.4.11-Eph.4.14&options=VGUVNH&display=COLUMN'>ESV, NASB &amp; Greek</a> in column view</span><br/>" +
+                "<span style='line-height:20px;'><a style='color: #2a6496;text-decoration: underline;' href='http://www.e4.org/?q=version=OHB|version=ESV&options=LVUMCHN&display=INTERLINEAR'>Hebrew interlinear</a></span><br/>" +
+                "<span style='line-height:20px;'><a style='color: #2a6496;text-decoration: underline;' href='http://www.e4.org/?q=version=WHNU|reference=John.1|version=ESV&options=GHLVUN&display=INTERLINEAR'>Greek interlinear</a></span><br/>" +
                 "<h6 style='line-height:16px;'>Here is example of finding all Greek words related to \"Righteous or Justify\" in the book of Romans:</h6>" +
                 "<div style=''padding:6px 0px;'>" +
-                "<span style='line-height:20px;'><a style='font-weight:bold;' href='http://www.e4.org/?q=strong=G1342|version=ESV|reference=Rom&options=NHVUG&qFilter=G5267,G1348,G1342,G1738,G1341,G1347,G1345,G1343,G1346&sort=false'>Search all words related to Righteousness in Romans</a></span><br/><br/>" +
+                "<span style='line-height:20px;'><a style='color: #2a6496;text-decoration: underline;' href='http://www.e4.org/?q=strong=G1342|version=ESV|reference=Rom&options=NHVUG&qFilter=G5267,G1348,G1342,G1738,G1341,G1347,G1345,G1343,G1346&sort=false'>Search all words related to Righteousness in Romans</a></span><br/><br/>" +
                 "<span style='line-height:20px;'>Click \"R\" Tab for Cross References.</span><br/>" +
                 "<span style='line-height:20px;'>Click \"V\" Tab for Vocab definitions of Greek and Hebrew.</span><br/>" +
                 "<span style='line-height:20px;'>Click \"Stats\" Tab for Vocab analysis.</span><br/>" +
