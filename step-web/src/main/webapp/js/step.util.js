@@ -904,6 +904,7 @@ step.util = {
                     //simply toggle it
                     step.sidebar.trigger("toggleOpen");
                 } else if (step.sidebar.get("mode") != mode) {
+                    $.cache('#lexicon').remove();
                     step.sidebar.save({ mode: mode });
                 } else {
                     //there is a mode, which is non null, but the save wouldn't do anything, to force open
